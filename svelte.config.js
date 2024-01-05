@@ -23,8 +23,8 @@ const config = {
 			}
 		},
 		adapter: adapter({
-			pages: 'docs',
-			assets: 'docs',
+			pages: 'build',
+			assets: 'build',
 			// fallback: 'index.html',
 			precompress: false,
 			strict: true

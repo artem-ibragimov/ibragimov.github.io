@@ -7,6 +7,6 @@
    }`;
 </script>
 
-<Snippet {lang} {code}>
+<Snippet {code}>
 	<div slot="demo"></div>
 </Snippet>
