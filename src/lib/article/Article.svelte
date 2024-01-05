@@ -41,6 +41,7 @@
 
 <article class="Article">
 	<h1>{data.title}</h1>
+	<div class="Article__content">
 	{#each data.chapters as [title, text, snippet]}
 		<section>
 			<h3>{title}</h3>
@@ -50,6 +51,7 @@
 			</div>
 		</section>
 	{/each}
+	</div>
 </article>
 
 <style>
@@ -57,13 +59,18 @@
 		padding: 10px;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		align-items: stretch;
-		margin: auto;
+		align-items: center;
+		width: 100vw;
+	}
+	.Article__content{
+		display: grid;
 		max-width: 920px;
+		grid-template-columns: repeat(2, 1fr);
+		gap:16px;
 	}
 	.Article__section {
 		display: flex;
+		flex-direction: column;
 		gap: 16px;
 		flex-wrap: wrap;
 	}

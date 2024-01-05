@@ -3,13 +3,12 @@
 </script>
 
 <div class="Snippet">
-	<pre><code>
-      {@html code}
-   </code></pre>
-	<pre>
+	<div class="Snippet__settings">
+		<pre> <code> {@html code} </code> </pre>
+		<slot name="settings" />
+	</div>
 
 	<slot name="demo" />
-</pre>
 </div>
 
 <style lang="less">
@@ -17,5 +16,12 @@
 
 	.Snippet {
 		display: flex;
+		flex-wrap: wrap;
+		gap: 16px;
+		justify-content: space-around;
+	}
+	.Snippet__settings {
+		display: flex;
+		flex-direction: column;
 	}
 </style>
