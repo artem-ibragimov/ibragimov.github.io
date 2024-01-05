@@ -1,0 +1,48 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Generator",
+			"program": "${workspaceFolder}/content/generator",
+			"request": "launch",
+			"skipFiles": ["<node_internals>/**"],
+			"type": "node",
+			"console": "integratedTerminal"
+		},
+		{
+			"name": "Upload FTP",
+			"program": "${workspaceFolder}/tools/ftp",
+			"request": "launch",
+			"skipFiles": ["<node_internals>/**"],
+			"type": "node",
+			"console": "integratedTerminal"
+		},
+		{
+			"name": "Poster",
+			"program": "${workspaceFolder}/content/poster",
+			"request": "launch",
+			"skipFiles": ["<node_internals>/**"],
+			"type": "node",
+			"console": "integratedTerminal"
+		},
+		{
+			"name": "Resize Images",
+			"program": "${workspaceFolder}/tools/resize_images",
+			"request": "launch",
+			"skipFiles": ["<node_internals>/**"],
+			"type": "node",
+			"console": "integratedTerminal"
+		},
+		{
+			"name": "Chrome",
+			"request": "launch",
+			"type": "chrome",
+			"url": "http://localhost:5173/",
+			"webRoot": "${workspaceFolder}",
+			"runtimeArgs": ["--disable-web-security"]
+		}
+	]
+}
