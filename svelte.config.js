@@ -1,7 +1,16 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import { readFileSync } from 'fs';
 
-/** @type {import('@sveltejs/kit').Config} */
+const content = readFileSync('./src/lib/content.ts').toString();
+const entries =
+	content
+		.slice(content.indexOf('article: {') + 'article: {'.length)
+		.split('\n')
+		.filter((v) => v.includes(': {'))
+		.map((v) => `/article/${v.replace(': {', '').replace(/'|"/gi, '').trim()}`);
+
+		/** @type {import('@sveltejs/kit').Config} */
 const config = {
 	preprocess: vitePreprocess(),
 
@@ -17,7 +26,7 @@ const config = {
 			handleMissingId: (details) => {
 				console.warn(details);
 			},
-			entries: ['*'],
+			entries: ['*', ...entries],
 			handleEntryGeneratorMismatch: (details) => {
 				console.warn(details);
 			}

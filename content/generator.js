@@ -1,19 +1,16 @@
 import chalk from 'chalk';
 import { readFile, writeFile } from 'node:fs/promises';
-import { get } from 'https';
 import { OpenAI } from 'openai';
 
 const error = (e) => console.error(chalk.red(e));
 const warn = (w) => console.warn(chalk.yellow(w));
 const info = (i) => console.log(chalk.green(i));
 
-const PUBLIC_CHAT_GPT_API_KEY = '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';
-const PUBLIC_CHAT_GPT_ORG_ID = 'org-0tXr3nALnhu8yFaZg68mwWcN';
 const localeFileName = `src/lib/i18n/ru.json`;
 
 const configuration = {
-	apiKey: PUBLIC_CHAT_GPT_API_KEY,
-	organization: PUBLIC_CHAT_GPT_ORG_ID,
+	apiKey: process.env.PUBLIC_CHAT_GPT_API_KEY,
+	organization: process.env.PUBLIC_CHAT_GPT_ORG_ID,
 	dangerouslyAllowBrowser: true
 };
 const openai = new OpenAI(configuration);

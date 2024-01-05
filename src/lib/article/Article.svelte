@@ -1,14 +1,10 @@
 <script lang="ts">
 	import { content } from '$lib/content';
 
-	type Category = keyof typeof content.text.article;
-	export let params: { name: string; category: string };
+	export let params: { name: string };
 	const date = new Date().toISOString();
 	const poster = `/assets/img/${params.name}.webp`;
-	const data =
-		content.text.article[params.category as Category][
-			params.name as keyof (typeof content.text.article)[Category]
-		];
+	const data = content.text.article[params.name as keyof typeof content.text.article];
 	$: schema = JSON.stringify({
 		'@context': 'https://schema.org',
 		'@type': 'BlogPosting',
@@ -18,7 +14,6 @@
 		keywords: data.keywords,
 		dateModified: date,
 		// TODO author, creator
-		articleSection: params.category,
 		articleBody: data.chapters.map(([title, text]) => `${title}\n${text}`).join('\n'),
 		about: data.description
 	});
