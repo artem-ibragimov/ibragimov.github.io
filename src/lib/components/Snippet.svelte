@@ -21,6 +21,7 @@
 		justify-content: space-around;
 	}
 	.Snippet__settings {
+		flex: 1;
 		display: flex;
 		flex-direction: column;
 	}

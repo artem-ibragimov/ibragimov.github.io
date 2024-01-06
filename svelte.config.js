@@ -3,14 +3,13 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { readFileSync } from 'fs';
 
 const content = readFileSync('./src/lib/content.ts').toString();
-const entries =
-	content
-		.slice(content.indexOf('article: {') + 'article: {'.length)
-		.split('\n')
-		.filter((v) => v.includes(': {'))
-		.map((v) => `/article/${v.replace(': {', '').replace(/'|"/gi, '').trim()}`);
+const entries = content
+	.slice(content.indexOf('article: {') + 'article: {'.length)
+	.split('\n')
+	.filter((v) => v.includes(': {'))
+	.map((v) => `/article/${v.replace(': {', '').replace(/'|"/gi, '').trim()}`);
 
-		/** @type {import('@sveltejs/kit').Config} */
+/** @type {import('@sveltejs/kit').Config} */
 const config = {
 	preprocess: vitePreprocess(),
 

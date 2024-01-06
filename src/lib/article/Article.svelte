@@ -42,15 +42,15 @@
 <article class="Article">
 	<h1>{data.title}</h1>
 	<div class="Article__content">
-	{#each data.chapters as [title, text, snippet]}
-		<section>
-			<h3>{title}</h3>
-			<div class="Article__section">
-				<span>{@html text}</span>
-				<svelte:component this={snippet} />
-			</div>
-		</section>
-	{/each}
+		{#each data.chapters as [title, text, snippet]}
+			<section>
+				<h3>{title}</h3>
+				<div class="Article__section">
+					<span>{@html text}</span>
+					<svelte:component this={snippet} />
+				</div>
+			</section>
+		{/each}
 	</div>
 </article>
 
@@ -62,13 +62,14 @@
 		align-items: center;
 		width: 100vw;
 	}
-	.Article__content{
+	.Article__content {
 		display: grid;
 		max-width: 920px;
 		grid-template-columns: repeat(2, 1fr);
-		gap:16px;
+		gap: 16px;
 	}
 	.Article__section {
+		white-space: pre-line;
 		display: flex;
 		flex-direction: column;
 		gap: 16px;

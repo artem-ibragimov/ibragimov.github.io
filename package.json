@@ -5,6 +5,9 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
+		"sitemap": "node ./tools/sitemap.js",
+		"resize_images": "node ./tools/resize_images.js",
+		"upload": "node ./tools/ftp.js",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -18,11 +21,11 @@
 		"@types/eslint": "8.56.0",
 		"@typescript-eslint/eslint-plugin": "^6.0.0",
 		"@typescript-eslint/parser": "^6.0.0",
+		"dotenv": "^16.3.1",
 		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.35.1",
 		"less": "^4.2.0",
-		"openai": "^4.24.1",
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.1.2",
 		"svelte": "^4.2.7",
@@ -32,5 +35,8 @@
 		"typescript": "^5.0.0",
 		"vite": "^5.0.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"ftp": "^0.3.10"
+	}
 }
