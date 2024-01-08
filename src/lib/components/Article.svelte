@@ -3,7 +3,7 @@
 
 	export let params: { name: string };
 	const date = new Date().toISOString();
-	const poster = `/assets/img/${params.name}.webp`;
+	const poster = `/img/${params.name}.png`;
 	const data = content.text.article[params.name as keyof typeof content.text.article];
 	$: schema = JSON.stringify({
 		'@context': 'https://schema.org',
@@ -42,12 +42,17 @@
 <article class="Article">
 	<h1>{data.title}</h1>
 	<div class="Article__content">
-		{#each data.chapters as [title, text, snippet]}
+		{#each data.chapters as [title, ...entities]}
 			<section>
 				<h3>{title}</h3>
 				<div class="Article__section">
-					<span>{@html text}</span>
-					<svelte:component this={snippet} />
+					{#each entities as entity}
+						{#if typeof entity === 'string'}
+							<p>{@html entity}</p>
+						{:else}
+							<svelte:component this={entity} />
+						{/if}
+					{/each}
 				</div>
 			</section>
 		{/each}
@@ -63,9 +68,8 @@
 		width: 100vw;
 	}
 	.Article__content {
-		display: grid;
-		max-width: 920px;
-		grid-template-columns: repeat(2, 1fr);
+		display: flex;
+		flex-direction: column;
 		gap: 16px;
 	}
 	.Article__section {

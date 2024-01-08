@@ -1,5 +1,6 @@
 import CssGridBase from '$lib/snippets/css-grid--gayd-po-reshyotke/CssGridBase.svelte';
 import type { ComponentConstructorOptions, SvelteComponent } from 'svelte';
+import CssGridFraction from './snippets/css-grid--gayd-po-reshyotke/CssGridFraction.svelte';
 
 export type Chapters = [
 	string,
@@ -9,7 +10,7 @@ export type Chapters = [
 	}?
 ][];
 
-export const content = {
+const content = {
 	text: {
 		about: {
 			header: '',
@@ -29,8 +30,8 @@ export const content = {
 					],
 					[
 						'Поддержка браузерами',
-						`Grid - современный инструмент верски макетов, поддерживается с 2017 года почти 98 % браузеров.
-                     Потрясающая поддержка,  только у Flexbox немного лучше`
+						`Grid - современный инструмент верски макетов, поддерживается с 2017 года почти 98 % браузеров
+						- потрясающая поддержка,  только у Flexbox немного лучше.`
 					],
 					[
 						'Модель Grid',
@@ -65,8 +66,15 @@ export const content = {
 						<li>второй - три четверти [3/<sub>1+3</sub>]</li>
 					</ul>
 					И если проценты и единицы длины жестко определяют размер, то fraction добавляет гибкости,
-					позволяет растягивать и сжимать стоблцы, учитывая их содержимое
-					`
+					позволяет растягивать и сжимать стоблцы, учитывая их содержимое.`
+					],
+					[
+						'Отличия % и fr',
+						`Столбцы, заданные fraction не сжимаются меньше минимального размера контента,
+						т.е при малых размерах пропорции все же нарушаются, а все потому, 
+						что fraction - распределяет <b>свободное</b> пространство.`,
+						CssGridFraction,
+						`Более того fraction учитывает значение <code>gap</code>[расстояние между строками и столбцами в grid]`
 					]
 					// ['- Свойства элементов решетки', ''],
 					// ['Компоновка с CSS Grid', ''],
@@ -95,3 +103,14 @@ export const content = {
 		}
 	}
 };
+
+const articles = (
+	Object.keys(content.text.article) as Array<keyof typeof content.text.article>
+).map((name) => ({
+	name,
+	title: content.text.article[name].title,
+	keywords: content.text.article[name].keywords,
+	description: content.text.article[name].description
+}));
+
+export { content, articles };

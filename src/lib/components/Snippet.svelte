@@ -4,8 +4,8 @@
 
 <div class="Snippet">
 	<div class="Snippet__settings">
-		<pre> <code> {@html code} </code> </pre>
 		<slot name="settings" />
+		<pre> <code> {@html code} </code> </pre>
 	</div>
 
 	<slot name="demo" />
@@ -24,5 +24,6 @@
 		flex: 1;
 		display: flex;
 		flex-direction: column;
+		justify-content: space-around;
 	}
 </style>

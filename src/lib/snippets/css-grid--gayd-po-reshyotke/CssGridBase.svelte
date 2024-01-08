@@ -2,22 +2,23 @@
 	import Snippet from '$lib/components/Snippet.svelte';
 	import Input from '$lib/components/Input.svelte';
 
-	let nodes_number = 1;
-	$: nodes = Array.from({ length: nodes_number }).map((_, i) => i + 1);
+	let selected = 1;
+	let options = [1, 2, 3, 4, 5];
+	$: children = Array.from({ length: selected });
 	const code = `.parent {
       display: grid;
    }`;
 </script>
 
 <Snippet {code}>
+	<svelte:fragment slot="settings">
+		<Input placeholder="Кол-во дочерних эл" {options} bind:value={selected} />
+	</svelte:fragment>
 	<div slot="demo" class="parent">
-		{#each nodes as i}
-			<div>{i}</div>
+		{#each children as _, i}
+			<div><code>child #{i}</code></div>
 		{/each}
 	</div>
-	<svelte:fragment slot="settings">
-		<Input placeholder="Кол-во дочерних эл" type="number" max="10" bind:value={nodes_number} />
-	</svelte:fragment>
 </Snippet>
 
 <style lang="less">
@@ -25,15 +26,17 @@
 	.parent {
 		display: grid;
 		border: #light_theme[border_primary];
-		border-color: #light_theme[accent];
 		height: 200px;
 		flex: 1;
 		box-sizing: border-box;
 	}
 	.parent div {
-		text-align: center;
+		border-bottom: #light_theme[border_accent];
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
-	.parent div:nth-child(odd) {
-		background: #light_theme[card_secondary];
+	.parent div:last-child {
+		border-bottom: none;
 	}
 </style>

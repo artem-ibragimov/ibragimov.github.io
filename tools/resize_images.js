@@ -9,9 +9,9 @@ import imageminWebp from 'imagemin-webp';
 import child_process from 'child_process';
 
 const error = (e) => console.error(chalk.red(e));
-const FOLDER = './static/assets/img';
+const FOLDER = './static/img';
 const SIZES = [320, 640, 1280];
-const SIZE_PREFIX = '--';
+const SIZE_PREFIX = '**';
 
 remove_resized(FOLDER)
 	.then(() =>

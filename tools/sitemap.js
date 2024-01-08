@@ -9,7 +9,7 @@ try {
 		changefreq: 'always',
 		lastmod: new Date().toISOString(),
 		priority: 0.9,
-		origin: 'https://car-defects.com'
+		origin: 'https://ibragimov.blog'
 	});
 } catch (e) {
 	error(e);
@@ -17,19 +17,6 @@ try {
 
 function createSiteMap(dir, options) {
 	const paths = collectPaths(dir);
-	const non_articles_paths = paths.filter((p) => !/article/.test(p));
-	const articles_paths = Object.values(
-		paths
-			.filter((p) => /article/.test(p))
-			.reduce((acc, p) => {
-				const paths = p.split('/').filter((p) => p !== '');
-				acc[paths[paths.length - 1]] = [
-					...(acc[paths[paths.length - 1]] || []),
-					[paths[paths.length - 2], p]
-				];
-				return acc;
-			}, {})
-	);
 	writeFileSync(
 		path.resolve(dir, 'sitemap.xml'),
 		`<?xml version="1.0" encoding="UTF-8"?>
@@ -40,7 +27,7 @@ function createSiteMap(dir, options) {
 		xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
 		xmlns:xhtml="http://www.w3.org/1999/xhtml"   
 	>
-${non_articles_paths
+${paths
 	.map(
 		(p) => `	\t<url>
 		\t<loc>${options.origin}${p}</loc>
@@ -50,23 +37,6 @@ ${non_articles_paths
 	\t</url>`
 	)
 	.join('\n')}
-	${articles_paths
-		.map(
-			(locales) =>
-				`\t<url>
-	\t<loc>${options.origin}${locales.find(([lang, _]) => lang === 'en')[1]}</loc>
-	\t<lastmod>${options.lastmod}</lastmod>
-	\t<changefreq>${options.changefreq}</changefreq>
-	\t<priority>${options.priority}</priority>
-${locales
-	.map(
-		([lang, path]) =>
-			`	\t<xhtml:link rel="alternate" hreflang="${lang}" href="${options.origin}${path}"/>`
-	)
-	.join('\n')}
-	</url>`
-		)
-		.join('\n')}
 </urlset>`
 	);
 }
