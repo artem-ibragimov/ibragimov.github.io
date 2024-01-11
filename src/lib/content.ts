@@ -13,8 +13,9 @@ export type Chapters = [
 const content = {
 	text: {
 		about: {
-			header: '',
-			text: ''
+			title: 'Блог ibragimov.blog',
+			description: 'Здесь я публикую собственные статьи про разработку ПО',
+			keywords: 'блог,разработка,фронтенд,javascript,css,html'
 		},
 		article: {
 			'css-grid--gayd-po-reshyotke': {

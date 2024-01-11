@@ -60,13 +60,6 @@
 </article>
 
 <style>
-	.Article {
-		padding: 10px;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		width: 100vw;
-	}
 	.Article__content {
 		display: flex;
 		flex-direction: column;
