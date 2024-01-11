@@ -37,23 +37,25 @@
 	.parent {
 		display: grid;
 		cursor: pointer;
-		border: #light_theme[border_primary];
+		gap: 20px;
 		height: 200px;
 		box-sizing: border-box;
 		width: 500px;
 		transition: all 1.5s;
+		border: #light_theme[border_accent];
 	}
 	.parent.shrinked {
 		width: 200px;
 	}
 	.parent div {
+		background: #light_theme[card_secondary];
+		box-sizing: border-box;
 		text-wrap: nowrap;
-		border-right: #light_theme[border_accent];
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
 	.parent div:last-child {
-		border-right: none;
+		// border-right: none;
 	}
 </style>

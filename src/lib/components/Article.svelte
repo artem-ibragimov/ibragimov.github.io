@@ -44,7 +44,7 @@
 	<div class="Article__content">
 		{#each data.chapters as [title, ...entities]}
 			<section>
-				<h3>{title}</h3>
+				<h2>{title}</h2>
 				<div class="Article__section">
 					{#each entities as entity}
 						{#if typeof entity === 'string'}

@@ -11,16 +11,19 @@ body {
 }
 
 @font-face {
+	font-display: swap;
 	font-family: 'Geologica Thin';
 	src: url('Geologica Thin.ttf');
 }
 
 @font-face {
+	font-display: swap;
 	font-family: 'Geologica Regular';
 	src: url('Geologica Regular.ttf');
 }
 
 @font-face {
+	font-display: swap;
 	font-family: 'Geologica Bold';
 	src: url('Geologica Bold.ttf');
 }
@@ -34,11 +37,11 @@ body {
 	overflow-x: hidden;
 }
 
-h1,
-h2 {
+h1 {
 	font-family: 'Geologica Bold';
 }
 
+h2,
 h3,
 h4,
 h5,
