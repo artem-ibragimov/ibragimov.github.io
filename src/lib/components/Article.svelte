@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { content } from '$lib/content';
+	import { transpile } from '$lib/transpilation';
+	import { onMount } from 'svelte';
 
 	export let params: { name: string };
 	const date = new Date().toISOString();
@@ -43,8 +45,9 @@
 	<h1>{data.title}</h1>
 	<div class="Article__content">
 		{#each data.chapters as [title, ...entities]}
+			{@const id = transpile(title.toLowerCase()).replaceAll(' ', '-')}
 			<section>
-				<h2>{title}</h2>
+				<a href={`#${id}`} name={id} {id}> <h2>{title}</h2></a>
 				<div class="Article__section">
 					{#each entities as entity}
 						{#if typeof entity === 'string'}
@@ -59,7 +62,10 @@
 	</div>
 </article>
 
-<style>
+<style scoped>
+	.Article {
+		max-width: 900px;
+	}
 	.Article__content {
 		display: flex;
 		flex-direction: column;

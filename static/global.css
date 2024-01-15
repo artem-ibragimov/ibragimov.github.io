@@ -57,3 +57,10 @@ pre,
 ul {
 	margin: 0;
 }
+
+a,
+a:-webkit-any-link {
+	color: inherit;
+	cursor: pointer;
+	text-decoration: none;
+}
