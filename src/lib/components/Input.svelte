@@ -1,5 +1,6 @@
 <script lang="ts">
 	export let type = 'string';
+	export let vertical = false;
 	export let value: string | number;
 	export let options: (string | number)[] = [];
 	export let autocomplete = 'on';
@@ -12,12 +13,18 @@
 	}
 </script>
 
-<div class="Input">
+<div class="Input" class:Input__vertical={vertical}>
 	<label for="input">{placeholder}</label>
 	{#if options.length !== 0}
 		{#each options as opt}
 			<label class="radio">
-				<input name="radio" type="radio" checked={opt == value} on:change={() => onchange(opt)} />
+				<input
+					name="radio"
+					type="radio"
+					checked={opt == value}
+					class:checked={opt == value}
+					on:change={() => onchange(opt)}
+				/>
 				<span>{opt}</span>
 			</label>
 		{/each}
@@ -38,10 +45,13 @@
 	{/if}
 </div>
 
-<style lang="less">
+<style lang="less" scoped>
 	.Input {
 		display: flex;
 		gap: 8px;
+	}
+	.Input__vertical {
+		flex-direction: column;
 	}
 	.Input__number {
 		width: 50px;
@@ -91,7 +101,7 @@
 		transform: scale(0, 0);
 		transition: all 0.2s cubic-bezier(0.64, 0.57, 0.67, 1.53);
 	}
-	.radio input:checked + span:after {
+	.radio input.checked + span:after {
 		opacity: 1;
 		transform: scale(1, 1);
 	}

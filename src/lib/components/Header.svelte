@@ -13,6 +13,7 @@
 
 	.Header {
 		background: #light_theme() [bg];
+		z-index: 9999;
 		display: flex;
 		justify-content: center;
 		position: sticky;

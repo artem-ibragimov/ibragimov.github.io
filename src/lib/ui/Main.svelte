@@ -3,5 +3,5 @@
 	import About from './About.svelte';
 </script>
 
-<ArticleLinks />
 <About />
+<ArticleLinks />

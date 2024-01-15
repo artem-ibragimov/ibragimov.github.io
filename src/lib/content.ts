@@ -1,6 +1,9 @@
 import CssGridBase from '$lib/snippets/css-grid--gayd-po-reshyotke/CssGridBase.svelte';
+import CssGridFraction from '$lib/snippets/css-grid--gayd-po-reshyotke/CssGridFraction.svelte';
+import CssGridRows from '$lib/snippets/css-grid--gayd-po-reshyotke/CssGridRows.svelte';
 import type { ComponentConstructorOptions, SvelteComponent } from 'svelte';
-import CssGridFraction from './snippets/css-grid--gayd-po-reshyotke/CssGridFraction.svelte';
+import CssGridColumnRow from './snippets/css-grid--gayd-po-reshyotke/CssGridColumnRow.svelte';
+import CssGridArea from './snippets/css-grid--gayd-po-reshyotke/CssGridArea.svelte';
 
 export type Chapters = [
 	string,
@@ -27,12 +30,12 @@ const content = {
 					[
 						'CSS Grid Layout - что это такое?',
 						`Grid - изумителен, ведь он позволяет создавать сложные и гибкие макеты. 
-                     Одновременно с этим Grid не прост, и мне потребовалось время, чтобы его освоить.`
+						Одновременно с этим Grid не прост, и мне потребовалось время, чтобы его освоить.`
 					],
 					[
 						'Поддержка браузерами',
 						`Grid - современный инструмент верски макетов, поддерживается с 2017 года почти 98 % браузеров
-						- потрясающая поддержка,  только у Flexbox немного лучше.`
+						- потрясающая поддержка, только у Flexbox немного лучше.`
 					],
 					[
 						'Модель Grid',
@@ -75,7 +78,41 @@ const content = {
 						т.е при малых размерах пропорции все же нарушаются, а все потому, 
 						что fraction - распределяет <b>свободное</b> пространство.`,
 						CssGridFraction,
-						`Более того fraction учитывает значение <code>gap</code> [расстояние между строками и столбцами в grid]`
+						`Более того fraction учитывает значение <code>gap</code> [расстояние между строками и столбцами в grid].
+						Проценты расчитываются от длины всего контейнера, 25% и 75% распределют всю длину 
+						и добавление <code>gap</code> переполняет контейнер.
+						
+						Fraction в свою очередь распределяет <code>свободное</code> пространство, ширину без <code>gap</code>`
+					],
+					[
+						`Явные и неявные строки`,
+						`Grid по-умолчанию выделяет ячейку для каждого дочернего элемента, таким образом, 
+						3 элемента в сетке с 2-мя столбцами будут размещены на 2х строках.
+						Это неявное задание строк.
+						Задать число строк явно можно через <code> grid-template-rows</code>`,
+						CssGridRows
+					],
+					[
+						`Функция repeat`,
+						`Для повторяющихся значений используйте функцию <code>repeat</code>:
+						<code> grid-template-columns: repeat(5, 1fr);</code>`
+					],
+					[
+						`Привязанность к детям`,
+						`По-умолчанию алгоритм grid связывает каждый дочерний элемент с первой пустой ячейкой.
+						Но можно привязать любые ячейки к любым дочерним элементам: 
+						свойства <code>grid-column</code> и <code> grid-row</code> определяют, какие ячейки занимает компонент. 
+						Чтобы указать диапазон, используйте номера столбцов или строк, разделенные через <code>/</code> [slash].`,
+						CssGridColumnRow,
+						`Отсчет ведется слева направо, сверху вниз, для обратного направления используются отрицательные значения`
+					],
+					[
+						`Grid Areas`,
+						`Так, настало время поговорить о крутейшей фишке CSS GRID: разбить сетку на именнованные области и присваивать их
+						вместо номеров столбцов и строк!`,
+						CssGridArea,
+						`Каждая текстовая строка ассоциируется с grid-строкой, каждое слово - с столбцом. На общем плане такой текст тоже выглядит как сетка!
+						Дублирование <code>sidebar</code> на несколько строк расширяет область на эти строки.`
 					]
 					// ['- Свойства элементов решетки', ''],
 					// ['Компоновка с CSS Grid', ''],
@@ -114,4 +151,4 @@ const articles = (
 	description: content.text.article[name].description
 }));
 
-export { content, articles };
+export { articles, content };
