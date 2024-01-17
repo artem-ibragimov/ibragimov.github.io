@@ -39,8 +39,7 @@
 		cursor: pointer;
 		gap: 20px;
 		height: 200px;
-		box-sizing: border-box;
-		width: 500px;
+		width: 400px;
 		transition: all 1.5s;
 		border: #light_theme[border_accent];
 	}
@@ -49,13 +48,9 @@
 	}
 	.parent div {
 		background: #light_theme[card_secondary];
-		box-sizing: border-box;
 		text-wrap: nowrap;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-	}
-	.parent div:last-child {
-		// border-right: none;
 	}
 </style>

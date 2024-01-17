@@ -27,8 +27,7 @@
 		display: grid;
 		border: #light_theme[border_primary];
 		height: 200px;
-		flex: 1;
-		box-sizing: border-box;
+		width: 200px;
 	}
 	.parent div {
 		border-bottom: #light_theme[border_accent];

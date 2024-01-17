@@ -15,6 +15,7 @@
 	@import '$lib/style/const';
 
 	.Snippet {
+		max-width: 100vw;
 		display: flex;
 		flex-wrap: wrap;
 		gap: 16px;

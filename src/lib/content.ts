@@ -4,6 +4,7 @@ import CssGridRows from '$lib/snippets/css-grid--gayd-po-reshyotke/CssGridRows.s
 import type { ComponentConstructorOptions, SvelteComponent } from 'svelte';
 import CssGridColumnRow from './snippets/css-grid--gayd-po-reshyotke/CssGridColumnRow.svelte';
 import CssGridArea from './snippets/css-grid--gayd-po-reshyotke/CssGridArea.svelte';
+import CssGridAlignment from '$lib/snippets/css-grid--gayd-po-reshyotke/CssGridAlignment.svelte';
 
 export type Chapters = [
 	string,
@@ -114,6 +115,18 @@ const content = {
 						`Каждая текстовая строка ассоциируется с grid-строкой, каждое слово - со столбцом. 
 						На общем плане такой текст тоже выглядит как сетка!
 						Дублирование <code>sidebar</code> на несколько строк расширяет область на эти строки.`
+					],
+					[
+						`Выравнивание`,
+						`Распределение свободного пространства реализовано схожим с Flexbox алгоритмом
+						<ul>
+							<li> <code> justify </code> - выравнивание столбцов</li>
+							<li> <code> align </code> - выравнивание строк </li>
+							<li> <code> content </code> - выравнивание сетки </li>
+							<li> <code> items </code> - выравнивание DOM элементов внутри сетки </li>
+						</ul>`,
+						CssGridAlignment,
+						`Есть удобное сокращение: <code> place-content</code> удобно указать одно значение для <code> align-content </code> и <code> justify-content </code> `
 					]
 					// ['- Свойства элементов решетки', ''],
 					// ['Компоновка с CSS Grid', ''],

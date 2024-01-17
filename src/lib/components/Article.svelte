@@ -64,6 +64,7 @@
 
 <style scoped>
 	.Article {
+		width: 100%;
 		max-width: 900px;
 	}
 	.Article__content {
@@ -72,8 +73,8 @@
 		gap: 16px;
 	}
 	.Article__section {
-		white-space: pre-line;
 		display: flex;
+		text-align: justify;
 		flex-direction: column;
 		gap: 16px;
 		flex-wrap: wrap;

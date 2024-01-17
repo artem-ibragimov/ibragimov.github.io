@@ -49,7 +49,6 @@
 		border: #light_theme[border_primary];
 		height: 200px;
 		flex: 1;
-		box-sizing: border-box;
 	}
 
 	.sidebar {
@@ -62,7 +61,6 @@
 		grid-area: main;
 	}
 	.parent div {
-		box-sizing: border-box;
 		border: #light_theme[border_secondary];
 		display: flex;
 		justify-content: center;

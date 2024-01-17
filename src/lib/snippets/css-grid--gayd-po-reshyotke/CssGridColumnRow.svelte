@@ -34,12 +34,10 @@
 		grid-template-rows: repeat(4, 1fr);
 		border: #light_theme[border_primary];
 		height: 200px;
-		flex: 1;
-		box-sizing: border-box;
+		width: 200px;
 	}
 	.parent div {
 		border: #light_theme[border_secondary];
-		box-sizing: border-box;
 		display: flex;
 		justify-content: center;
 		align-items: center;

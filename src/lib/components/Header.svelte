@@ -3,7 +3,7 @@
 </script>
 
 <nav class="Header">
-	<a href="/" target="_self">
+	<a href="/" target="_self" aria-label="На главную">
 		<LogoMd />
 	</a>
 </nav>

@@ -33,7 +33,6 @@
 
 <style scoped>
 	.Card {
-		box-sizing: border-box;
 		display: flex;
 		flex-direction: column;
 		flex-wrap: wrap;
@@ -68,7 +67,6 @@
 	}
 	.Card__banner {
 		object-fit: cover;
-		min-width: 100%;
 		border-radius: 8px 8px 0 0;
 	}
 

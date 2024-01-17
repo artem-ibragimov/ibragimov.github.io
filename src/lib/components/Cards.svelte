@@ -37,8 +37,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: 16px;
-		row-gap: 16px;
-		justify-content: space-around;
 		padding: 16px 0;
 	}
 

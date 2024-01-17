@@ -1,9 +1,13 @@
+@color-primary: #111;
+@color-secondary: #444;
+
 #light_theme() {
 	bg: #fffdf6;
-	primary: #111111;
+	primary: @color-primary;
+	secondary: @color-secondary;
 	card_secondary: #e5e5e5;
-	border_primary: 1px solid #111111;
-	border_secondary: 0.5px solid #444444;
+	border_primary: 1px solid @color-primary;
+	border_secondary: 0.5px solid @color-secondary;
 	border_accent: 2px solid green;
 	accent: green;
 	gray1: #00800010;
