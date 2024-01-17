@@ -61,8 +61,8 @@
 		width: 300px;
 		transition: all ease-in-out 0.25s;
 		background-size: 100px 100px;
-		background-image: linear-gradient(to right, @color-secondary, 0.5px, transparent 0.5px),
-			linear-gradient(to bottom, @color-secondary 0.5px, transparent 0.5px);
+		background-image: linear-gradient(to right, @color-secondary, 1px, transparent 1px),
+			linear-gradient(to bottom, @color-secondary 1px, transparent 1px);
 	}
 	.parent div {
 		transition: all 1s;

@@ -39,12 +39,12 @@
 		cursor: pointer;
 		gap: 20px;
 		height: 200px;
-		width: 400px;
+		width: 300px;
 		transition: all 1.5s;
 		border: #light_theme[border_accent];
 	}
 	.parent.shrinked {
-		width: 200px;
+		width: 150px;
 	}
 	.parent div {
 		background: #light_theme[card_secondary];

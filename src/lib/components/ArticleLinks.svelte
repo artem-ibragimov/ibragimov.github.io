@@ -43,7 +43,6 @@
 
 <style scoped>
 	.ArticleLinks {
-		flex: 1;
 		display: flex;
 		flex-wrap: wrap;
 		gap: 8px;

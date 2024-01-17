@@ -48,7 +48,7 @@
 			'sidebar main';
 		border: #light_theme[border_primary];
 		height: 200px;
-		flex: 1;
+		width: 300px;
 	}
 
 	.sidebar {

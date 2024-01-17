@@ -34,7 +34,7 @@
 		display: grid;
 		border: #light_theme[border_primary];
 		height: 200px;
-		flex: 1;
+		width: 200px;
 		box-sizing: border-box;
 	}
 	.parent div {
