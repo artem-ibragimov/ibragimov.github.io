@@ -3,6 +3,7 @@
 	export let title: string = '';
 	export let keywords: string[] = [];
 	export let name: string = '';
+	export let imgSrc: string = '';
 	export let href: string | undefined = void 0;
 	const SIZES = [320, 640, 1280];
 	const SIZE_PREFIX = '**';
@@ -15,7 +16,7 @@
 		<img
 			{loading}
 			class="Card__banner"
-			src={name}
+			src={imgSrc}
 			alt={title}
 			{title}
 			{srcset}

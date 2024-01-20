@@ -13,6 +13,7 @@
 			title: data.title,
 			href: `/article/${data.name}/`,
 			name: data.name,
+			imgSrc: `/img/${data.name}.png`,
 			keywords: data.keywords.split(',')
 		}))
 		.filter((card) => (name ? !card.href.includes(name) : true))
@@ -34,12 +35,16 @@
 </script>
 
 <svelte:head>
-	{@html `<script type="application/ld+json"> ${schema} </script>`}
+	{#if cards.length !== 0}
+		{@html `<script type="application/ld+json"> ${schema} </script>`}
+	{/if}
 </svelte:head>
 
-<nav class="ArticleLinks">
-	<Cards {cards} />
-</nav>
+{#if cards.length !== 0}
+	<nav class="ArticleLinks">
+		<Cards {cards} />
+	</nav>
+{/if}
 
 <style scoped>
 	.ArticleLinks {
