@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../../favicon_io/favicon.svg" type="image/svg+xml" />
+
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../favicon_io/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../favicon_io/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../favicon_io/favicon-16x16.png"
+		/>
+
+		<link
+			rel="preload"
+			href="../../Geologica Thin.ttf"
+			as="font"
+			type="font/ttf"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="../../Geologica Regular.ttf"
+			as="font"
+			type="font/ttf"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="../../Geologica Bold.ttf"
+			as="font"
+			type="font/ttf"
+			crossorigin
+		/>
+		<link rel="manifest" href="../../favicon_io/site.webmanifest" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+	<style>.Layout.svelte-q8vjj5{display:flex;flex-direction:column;align-items:center;width:100vw;min-height:100vh;padding:16px}
+
+.Header.svelte-4ho4cz{background:#fffdf6;z-index:9999;display:flex;justify-content:center;position:sticky;left:0;right:0;top:0;height:50px}
+
+.Article.svelte-trzris{width:100%;max-width:900px}.Article__content.svelte-trzris{display:flex;flex-direction:column;gap:16px}.Article__section.svelte-trzris{display:flex;text-align:justify;flex-direction:column;gap:16px;flex-wrap:wrap}
+</style>
+		<link href="../../_app/immutable/assets/0.DNyVAmlO.css" rel="stylesheet" disabled media="(max-width: 0)">
+		<link href="../../_app/immutable/assets/Header.FJlFZknL.css" rel="stylesheet" disabled media="(max-width: 0)">
+		<link href="../../_app/immutable/assets/4.BrHVsVXa.css" rel="stylesheet" disabled media="(max-width: 0)">
+		<link href="../../_app/immutable/assets/ArticleLinks.Mx2X28IF.css" rel="stylesheet">
+		<link rel="modulepreload" href="../../_app/immutable/entry/start.V52VuMLR.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/scheduler.mYU7rp0S.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/singletons.Ft9gKToU.js">
+		<link rel="modulepreload" href="../../_app/immutable/entry/app.qsNQFxZ1.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/index.8oa8tM3b.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/0.UDYHHY6T.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/Header.njWabity.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/2.T7QzzRAM.js">
+		<link rel="modulepreload" href="../../_app/immutable/nodes/4.GPNjPQG2.js">
+		<link rel="modulepreload" href="../../_app/immutable/chunks/ArticleLinks.ENyDMruN.js"><title>CSS Grid: Гайд по решётке</title><!-- HEAD_svelte-oozfue_START --><meta name="title" content="CSS Grid: Гайд по решётке"><meta name="description" content="Руководство по CSS Grid: как создавать гибкие макеты.
+                  Эта статья охватывает основы, продвинутые техники, примеры и практические советы для адаптивной верстки"><meta name="keywords" content="css,grid,верстка,гайд,туториал"><meta name="og:title" property="og:title" content="CSS Grid: Гайд по решётке"><meta property="og:image" content="/img/css-grid--gayd-po-reshyotke.png"><meta property="og:type" content="article"><meta property="og:locale" content="ru"><meta property="og:description" content="Руководство по CSS Grid: как создавать гибкие макеты.
+                  Эта статья охватывает основы, продвинутые техники, примеры и практические советы для адаптивной верстки"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:title" content="CSS Grid: Гайд по решётке"><meta property="twitter:description" content="Руководство по CSS Grid: как создавать гибкие макеты.
+                  Эта статья охватывает основы, продвинутые техники, примеры и практические советы для адаптивной верстки"><meta property="twitter:image" content="/img/css-grid--gayd-po-reshyotke.png"><!-- HTML_TAG_START --><script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","headline":"CSS Grid: Гайд по решётке","image":"/img/css-grid--gayd-po-reshyotke.png","datePublished":"2024-05-21T16:46:06.088Z","keywords":"css,grid,верстка,гайд,туториал","dateModified":"2024-05-21T16:46:06.088Z","articleBody":"CSS Grid Layout - что это такое?\nGrid - изумителен, ведь он позволяет создавать сложные и гибкие макеты. \n\t\t\t\t\t\tОдновременно с этим Grid не прост, и мне потребовалось время, чтобы его освоить.\nПоддержка браузерами\nGrid - современный инструмент верски макетов, поддерживается с 2017 года почти 98 % браузеров\n\t\t\t\t\t\t- потрясающая поддержка, только у Flexbox немного лучше.\nМодель Grid\nCSS предоставляет несколько алгоритмов разметки:\n                     <ul>\n                     <li>Flow - макет по-умолчанию</li>\n                     <li>Table - для отображения табличных данных </li>\n                     <li>Flexbox - для отображения элементов по одной оси </li>\n                     <li>Grid - для отображения элементов по двум осям </li>\n                     </ul>\n                     И первое что сбивает с толку в Grid: структура сетки - столбцы и строки - определяются в CSS!\n                     Это необычно, ведь в других макетах структура определяется дочерними DOM элементами.\nGrid Макет\nПо-умолчанию создается один столбец и дочерние элементы располагаются на каждой строке\n\t\t\t\t\t\t- это считается неявной сеткой, т.к мы не задали структуру.\n\n                     Высота родителя определяется дочерними элементами по правилам Flow макета,\n                     и только дочерние компоненты размещаются по правилам grid сетки.\n\t\t\t\t\t\t\tЕсли выстоу задать явно, она будет равномерно распределена между строками\nСтруктура сетки\nСтолбцы в grid задаются свойством <code>grid-template-columns</code>.\n\t\t\t\t\tМожно задавать в <code>px, %, viewport units </code> и в новых единицах <b>fr</b> [fraction - пропорции].\n\n\t\t\t\t\tНапример, <code>grid-template-columns: 1fr 3fr;</code> описывает два столбца:\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t<li>первый занимает четверть [1/<sub>1+3</sub>] <i>свободного</i> пространства</li>\n\t\t\t\t\t\t<li>второй - три четверти [3/<sub>1+3</sub>]</li>\n\t\t\t\t\t</ul>\n\t\t\t\t\tИ если проценты и единицы длины жестко определяют размер, то fraction добавляет гибкости,\n\t\t\t\t\tпозволяет растягивать и сжимать стоблцы, учитывая их содержимое.\nОтличия % и fr\nСтолбцы, заданные fraction не сжимаются меньше минимального размера контента,\n\t\t\t\t\t\tт.е при малых размерах пропорции все же нарушаются, а все потому, \n\t\t\t\t\t\tчто fraction - распределяет <b>свободное</b> пространство.\nЯвные и неявные строки\nGrid по-умолчанию выделяет ячейку для каждого дочернего элемента, таким образом, \n\t\t\t\t\t\t3 элемента в сетке с 2-мя столбцами будут размещены на 2х строках.\n\t\t\t\t\t\tЭто неявное задание строк.\n\t\t\t\t\t\tЗадать число строк явно можно через <code> grid-template-rows</code>\nФункция repeat\nДля повторяющихся значений используйте функцию <code>repeat</code>:\n\t\t\t\t\t\t<code> grid-template-columns: repeat(5, 1fr);</code>\nПривязанность к детям\nПо-умолчанию алгоритм grid связывает каждый дочерний элемент с первой пустой ячейкой.\n\t\t\t\t\t\tНо можно привязать любые ячейки к любым дочерним элементам: \n\t\t\t\t\t\tсвойства <code>grid-column</code> и <code> grid-row</code> определяют, какие ячейки занимает компонент. \n\t\t\t\t\t\tЧтобы указать диапазон, используйте номера столбцов или строк, разделенные через <code>/</code> [slash].\nGrid Areas\nТак, настало время поговорить о крутейшей фишке CSS GRID: \n\t\t\t\t\t\tразбить сетку на именнованные области и присваивать их вместо номеров столбцов и строк!\nВыравнивание\nРаспределение свободного пространства реализовано схожим с Flexbox алгоритмом\n\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t<li> <code> justify </code> - выравнивание столбцов</li>\n\t\t\t\t\t\t\t<li> <code> align </code> - выравнивание строк </li>\n\t\t\t\t\t\t\t<li> <code> content </code> - выравнивание сетки </li>\n\t\t\t\t\t\t\t<li> <code> items </code> - выравнивание DOM элементов внутри сетки </li>\n\t\t\t\t\t\t</ul>","about":"Руководство по CSS Grid: как создавать гибкие макеты.\n                  Эта статья охватывает основы, продвинутые техники, примеры и практические советы для адаптивной верстки"} </script><!-- HTML_TAG_END --><!-- HEAD_svelte-oozfue_END --><!-- HEAD_svelte-1di9wra_START --><!-- HEAD_svelte-1di9wra_END -->
+		<link
+			rel="preload"
+			as="style"
+			onload="this.onload=null;this.rel='stylesheet'"
+			href="../../global.css"
+		/>
+	</head>
+
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">  <nav class="Header svelte-4ho4cz"><a href="/" target="_self" aria-label="На главную"><img src="" alt="" title="" srcset="/img/logo_md**320.webp 320w, /img/logo_md**640.webp 640w, /img/logo_md**1280.webp 1280w" width="199" height="45" sizes="(max-width: 500px) 100vw, 30vw"></a> </nav> <main class="Layout svelte-q8vjj5"><nav class="Header svelte-4ho4cz"><a href="/" target="_self" aria-label="На главную"><img src="" alt="" title="" srcset="/img/logo_md**320.webp 320w, /img/logo_md**640.webp 640w, /img/logo_md**1280.webp 1280w" width="199" height="45" sizes="(max-width: 500px) 100vw, 30vw"></a> </nav> <main class="Layout svelte-q8vjj5"> <article class="Article svelte-trzris"><h1>CSS Grid: Гайд по решётке</h1> <div class="Article__content svelte-trzris"> <section><a href="#css-grid-layout---chto-ehto-takoe?" name="css-grid-layout---chto-ehto-takoe?" id="css-grid-layout---chto-ehto-takoe?"><h2>CSS Grid Layout - что это такое?</h2></a> <div class="Article__section svelte-trzris"><p><!-- HTML_TAG_START -->Grid - изумителен, ведь он позволяет создавать сложные и гибкие макеты. 
+						Одновременно с этим Grid не прост, и мне потребовалось время, чтобы его освоить.<!-- HTML_TAG_END --></p></div> </section> <section><a href="#podderzhka-brauzerami" name="podderzhka-brauzerami" id="podderzhka-brauzerami"><h2>Поддержка браузерами</h2></a> <div class="Article__section svelte-trzris"><p><!-- HTML_TAG_START -->Grid - современный инструмент верски макетов, поддерживается с 2017 года почти 98 % браузеров
+						- потрясающая поддержка, только у Flexbox немного лучше.<!-- HTML_TAG_END --></p></div> </section> <section><a href="#modeljh-grid" name="modeljh-grid" id="modeljh-grid"><h2>Модель Grid</h2></a> <div class="Article__section svelte-trzris"><p><!-- HTML_TAG_START -->CSS предоставляет несколько алгоритмов разметки:
+                     <ul>
+                     <li>Flow - макет по-умолчанию</li>
+                     <li>Table - для отображения табличных данных </li>
+                     <li>Flexbox - для отображения элементов по одной оси </li>
+                     <li>Grid - для отображения элементов по двум осям </li>
+                     </ul>
+                     И первое что сбивает с толку в Grid: структура сетки - столбцы и строки - определяются в CSS!
+                     Это необычно, ведь в других макетах структура определяется дочерними DOM элементами.<!-- HTML_TAG_END --></p></div> </section> <section><a href="#grid-maket" name="grid-maket" id="grid-maket"><h2>Grid Макет</h2></a> <div class="Article__section svelte-trzris"><p><!-- HTML_TAG_START -->По-умолчанию создается один столбец и дочерние элементы располагаются на каждой строке
+						- это считается неявной сеткой, т.к мы не задали структуру.
+
+                     Высота родителя определяется дочерними элементами по правилам Flow макета,
+                     и только дочерние компоненты размещаются по правилам grid сетки.
+							Если выстоу задать явно, она будет равномерно распределена между строками<!-- HTML_TAG_END --></p><div class="Snippet svelte-c11l2e"><div class="Snippet__settings svelte-c11l2e"><div class="Input svelte-12opdne"><label for="input">Кол-во дочерних эл</label> <label class="radio svelte-12opdne"><input name="radio" type="radio" checked class="svelte-12opdne checked"> <span class="svelte-12opdne">1</span> </label><label class="radio svelte-12opdne"><input name="radio" type="radio"  class="svelte-12opdne"> <span class="svelte-12opdne">2</span> </label><label class="radio svelte-12opdne"><input name="radio" type="radio"  class="svelte-12opdne"> <span class="svelte-12opdne">3</span> </label><label class="radio svelte-12opdne"><input name="radio" type="radio"  class="svelte-12opdne"> <span class="svelte-12opdne">4</span> </label><label class="radio svelte-12opdne"><input name="radio" type="radio"  class="svelte-12opdne"> <span class="svelte-12opdne">5</span> </label> </div> <pre> <code> <!-- HTML_TAG_START -->.parent {
+      display: grid;
+   }<!-- HTML_TAG_END --> </code> </pre></div> <div slot="demo" class="parent svelte-1dcncal"><div class="svelte-1dcncal"><code>child #0</code></div></div> </div></div> </section> <section><a href="#struktura-setki" name="struktura-setki" id="struktura-setki"><h2>Структура сетки</h2></a> <div class="Article__section svelte-trzris"><p><!-- HTML_TAG_START -->Столбцы в grid задаются свойством <code>grid-template-columns</code>.
+					Можно задавать в <code>px, %, viewport units </code> и в новых единицах <b>fr</b> [fraction - пропорции].
+
+					Например, <code>grid-template-columns: 1fr 3fr;</code> описывает два столбца:
+					<ul>
+						<li>первый занимает четверть [1/<sub>1+3</sub>] <i>свободного</i> пространства</li>
+						<li>второй - три четверти [3/<sub>1+3</sub>]</li>
+					</ul>
+					И если проценты и единицы длины жестко определяют размер, то fraction добавляет гибкости,
+					позволяет растягивать и сжимать стоблцы, учитывая их содержимое.<!-- HTML_TAG_END --></p></div> </section> <section><a href="#otlichiya-%-i-fr" name="otlichiya-%-i-fr" id="otlichiya-%-i-fr"><h2>Отличия % и fr</h2></a> <div class="Article__section svelte-trzris"><p><!-- HTML_TAG_START -->Столбцы, заданные fraction не сжимаются меньше минимального размера контента,
+						т.е при малых размерах пропорции все же нарушаются, а все потому, 
+						что fraction - распределяет <b>свободное</b> пространство.<!-- HTML_TAG_END --></p><div class="Snippet svelte-c11l2e"><div class="Snippet__settings svelte-c11l2e"><div class="Input svelte-12opdne"><label for="input">Размер столбцов в </label> <label class="radio svelte-12opdne"><input name="radio" type="radio" checked class="svelte-12opdne checked"> <span class="svelte-12opdne">%</span> </label><label class="radio svelte-12opdne"><input name="radio" type="radio"  class="svelte-12opdne"> <span class="svelte-12opdne">fr</span> </label> </div>
+		[Кликни на блок, чтобы сжать] <pre> <code> <!-- HTML_TAG_START -->.parent {
+      display: grid;
+      grid-template-columns: 25% 75%;
+   }<!-- HTML_TAG_END --> </code> </pre></div> <div slot="demo" style="grid-template-columns: 25% 75%;" class="parent svelte-1ukbqqk"><div class="svelte-1ukbqqk"><code>child 25%</code></div> <div class="svelte-1ukbqqk"><code>child 75%</code></div></div> </div><p><!-- HTML_TAG_START -->Более того fraction учитывает значение <code>gap</code> [расстояние между строками и столбцами в grid].
+						Проценты расчитываются от длины всего контейнера, 25% и 75% распределют всю длину 
+						и добавление <code>gap</code> переполняет контейнер.
+						
+						Fraction в свою очередь распределяет <code>свободное</code> пространство, ширину без <code>gap</code><!-- HTML_TAG_END --></p></div> </section> <section><a href="#yavnihe-i-neyavnihe-stroki" name="yavnihe-i-neyavnihe-stroki" id="yavnihe-i-neyavnihe-stroki"><h2>Явные и неявные строки</h2></a> <div class="Article__section svelte-trzris"><p><!-- HTML_TAG_START -->Grid по-умолчанию выделяет ячейку для каждого дочернего элемента, таким образом, 
+						3 элемента в сетке с 2-мя столбцами будут размещены на 2х строках.
+						Это неявное задание строк.
+						Задать число строк явно можно через <code> grid-template-rows</code><!-- HTML_TAG_END --></p><div class="Snippet svelte-c11l2e"><div class="Snippet__settings svelte-c11l2e"><div class="Input svelte-12opdne"><label for="input">Число столбцов</label> <label class="radio svelte-12opdne"><input name="radio" type="radio" checked class="svelte-12opdne checked"> <span class="svelte-12opdne">1</span> </label><label class="radio svelte-12opdne"><input name="radio" type="radio"  class="svelte-12opdne"> <span class="svelte-12opdne">2</span> </label><label class="radio svelte-12opdne"><input name="radio" type="radio"  class="svelte-12opdne"> <span class="svelte-12opdne">3</span> </label> </div> <div class="Input svelte-12opdne"><label for="input">Число строк</label> <label class="radio svelte-12opdne"><input name="radio" type="radio" checked class="svelte-12opdne checked"> <span class="svelte-12opdne">1</span> </label><label class="radio svelte-12opdne"><input name="radio" type="radio"  class="svelte-12opdne"> <span class="svelte-12opdne">2</span> </label><label class="radio svelte-12opdne"><input name="radio" type="radio"  class="svelte-12opdne"> <span class="svelte-12opdne">3</span> </label> </div> <pre> <code> <!-- HTML_TAG_START -->.parent {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+   }<!-- HTML_TAG_END --> </code> </pre></div> <div slot="demo" class="parent svelte-1td8ppk" style="   display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;"><div class="svelte-1td8ppk"><code>child #0</code></div></div> </div></div> </section> <section><a href="#funkciya-repeat" name="funkciya-repeat" id="funkciya-repeat"><h2>Функция repeat</h2></a> <div class="Article__section svelte-trzris"><p><!-- HTML_TAG_START -->Для повторяющихся значений используйте функцию <code>repeat</code>:
+						<code> grid-template-columns: repeat(5, 1fr);</code><!-- HTML_TAG_END --></p></div> </section> <section><a href="#privyazannostjh-k-detyam" name="privyazannostjh-k-detyam" id="privyazannostjh-k-detyam"><h2>Привязанность к детям</h2></a> <div class="Article__section svelte-trzris"><p><!-- HTML_TAG_START -->По-умолчанию алгоритм grid связывает каждый дочерний элемент с первой пустой ячейкой.
+						Но можно привязать любые ячейки к любым дочерним элементам: 
+						свойства <code>grid-column</code> и <code> grid-row</code> определяют, какие ячейки занимает компонент. 
+						Чтобы указать диапазон, используйте номера столбцов или строк, разделенные через <code>/</code> [slash].<!-- HTML_TAG_END --></p><div class="Snippet svelte-c11l2e"><div class="Snippet__settings svelte-c11l2e"> <pre> <code> <!-- HTML_TAG_START -->
+   .parent {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+   }
+
+   .child {
+      grid-column: 2 / 4;
+      grid-row: 2 / 4;
+   }<!-- HTML_TAG_END --> </code> </pre></div> <div slot="demo" class="parent svelte-1oyejf1"><div class="svelte-1oyejf1"></div><div class="svelte-1oyejf1"></div><div class="svelte-1oyejf1"></div><div class="svelte-1oyejf1"></div><div class="svelte-1oyejf1"></div><div class="svelte-1oyejf1"></div> <div class="child svelte-1oyejf1" data-svelte-h="svelte-1318yki"><code>child</code></div> <div class="svelte-1oyejf1"></div><div class="svelte-1oyejf1"></div><div class="svelte-1oyejf1"></div><div class="svelte-1oyejf1"></div><div class="svelte-1oyejf1"></div><div class="svelte-1oyejf1"></div></div> </div><p><!-- HTML_TAG_START -->Отсчет ведется слева направо, сверху вниз, для обратного направления используются отрицательные значения<!-- HTML_TAG_END --></p></div> </section> <section><a href="#grid-areas" name="grid-areas" id="grid-areas"><h2>Grid Areas</h2></a> <div class="Article__section svelte-trzris"><p><!-- HTML_TAG_START -->Так, настало время поговорить о крутейшей фишке CSS GRID: 
+						разбить сетку на именнованные области и присваивать их вместо номеров столбцов и строк!<!-- HTML_TAG_END --></p><div class="Snippet svelte-c11l2e"><div class="Snippet__settings svelte-c11l2e"><div class="Input svelte-12opdne"><label for="input"></label> <label class="radio svelte-12opdne"><input name="radio" type="radio" checked class="svelte-12opdne checked"> <span class="svelte-12opdne">sidebar</span> </label><label class="radio svelte-12opdne"><input name="radio" type="radio"  class="svelte-12opdne"> <span class="svelte-12opdne">header</span> </label><label class="radio svelte-12opdne"><input name="radio" type="radio"  class="svelte-12opdne"> <span class="svelte-12opdne">main</span> </label> </div> <pre> <code> <!-- HTML_TAG_START -->.parent {
+      display: grid;
+      grid-template-columns: 2fr 5fr;
+      grid-template-rows: 50px 1fr;
+      grid-template-areas:
+         'sidebar header'
+         'sidebar main';
+   }
+   .sidebar {
+      grid-area: sidebar;
+   }
+<!-- HTML_TAG_END --> </code> </pre></div> <div slot="demo" class="parent svelte-o9h6ao"><div class="sidebar svelte-o9h6ao selected" data-svelte-h="svelte-1h7hyiu"><code>sidebar</code></div> <div class="header svelte-o9h6ao" data-svelte-h="svelte-1mm0i9z"><code>header</code></div> <div class="main svelte-o9h6ao" data-svelte-h="svelte-qexe73"><code>main</code></div></div> </div><p><!-- HTML_TAG_START -->Каждая текстовая строка ассоциируется с grid-строкой, каждое слово - со столбцом. 
+						На общем плане такой текст тоже выглядит как сетка!
+						Дублирование <code>sidebar</code> на несколько строк расширяет область на эти строки.<!-- HTML_TAG_END --></p></div> </section> <section><a href="#vihravnivanie" name="vihravnivanie" id="vihravnivanie"><h2>Выравнивание</h2></a> <div class="Article__section svelte-trzris"><p><!-- HTML_TAG_START -->Распределение свободного пространства реализовано схожим с Flexbox алгоритмом
+						<ul>
+							<li> <code> justify </code> - выравнивание столбцов</li>
+							<li> <code> align </code> - выравнивание строк </li>
+							<li> <code> content </code> - выравнивание сетки </li>
+							<li> <code> items </code> - выравнивание DOM элементов внутри сетки </li>
+						</ul><!-- HTML_TAG_END --></p><div class="Snippet svelte-c11l2e"><div class="Snippet__settings svelte-c11l2e"><div style="display:flex; gap: 8px;"><div class="Input svelte-12opdne Input__vertical"><label for="input"></label> <label class="radio svelte-12opdne"><input name="radio" type="radio" checked class="svelte-12opdne checked"> <span class="svelte-12opdne">justify</span> </label><label class="radio svelte-12opdne"><input name="radio" type="radio"  class="svelte-12opdne"> <span class="svelte-12opdne">align</span> </label> </div> <div class="Input svelte-12opdne Input__vertical"><label for="input"></label> <label class="radio svelte-12opdne"><input name="radio" type="radio" checked class="svelte-12opdne checked"> <span class="svelte-12opdne">content</span> </label><label class="radio svelte-12opdne"><input name="radio" type="radio"  class="svelte-12opdne"> <span class="svelte-12opdne">items</span> </label><label class="radio svelte-12opdne"><input name="radio" type="radio"  class="svelte-12opdne"> <span class="svelte-12opdne">self</span> </label> </div> <div class="Input svelte-12opdne Input__vertical"><label for="input"></label> <label class="radio svelte-12opdne"><input name="radio" type="radio"  class="svelte-12opdne"> <span class="svelte-12opdne">start</span> </label><label class="radio svelte-12opdne"><input name="radio" type="radio"  class="svelte-12opdne"> <span class="svelte-12opdne">center</span> </label><label class="radio svelte-12opdne"><input name="radio" type="radio"  class="svelte-12opdne"> <span class="svelte-12opdne">end</span> </label><label class="radio svelte-12opdne"><input name="radio" type="radio"  class="svelte-12opdne"> <span class="svelte-12opdne">space-between</span> </label><label class="radio svelte-12opdne"><input name="radio" type="radio"  class="svelte-12opdne"> <span class="svelte-12opdne">space-around</span> </label><label class="radio svelte-12opdne"><input name="radio" type="radio"  class="svelte-12opdne"> <span class="svelte-12opdne">space-evenly</span> </label> </div></div> <pre> <code> <!-- HTML_TAG_START -->.parent {
+      display: grid; 
+   }<!-- HTML_TAG_END --> </code> </pre></div> <div slot="demo" class="parent svelte-1qpigj" style=""><div class="svelte-1qpigj selected" data-svelte-h="svelte-1q5lmil"><code>child #0</code></div> <div class="selected child_1 svelte-1qpigj"><code data-svelte-h="svelte-h0pbbe">child #1</code></div> <div class="svelte-1qpigj selected" data-svelte-h="svelte-of5xu3"><code>child #2</code></div></div> </div><p><!-- HTML_TAG_START -->Есть удобное сокращение: <code> place-content</code> удобно указать одно значение для <code> align-content </code> и <code> justify-content </code> <!-- HTML_TAG_END --></p></div> </section></div> </article>   </main> </main> 
+			
+			<script>
+				{
+					__sveltekit_16ch8ya = {
+						base: new URL("../..", location).pathname.slice(0, -1),
+						env: null
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null,null];
+
+					Promise.all([
+						import("../../_app/immutable/entry/start.V52VuMLR.js"),
+						import("../../_app/immutable/entry/app.qsNQFxZ1.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2, 4],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-2FN34NQBG4"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-2FN34NQBG4');
+	</script>
+</html>
